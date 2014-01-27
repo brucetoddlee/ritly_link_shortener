@@ -1,0 +1,30 @@
+<h2>List of Links and Codes</h2>
+</br>
+
+<table>
+
+<tr>
+  <th>ID</th>
+  <th>Input Link</th>
+  <th>Output Code</th>
+
+  <th class="date">Created</th>
+  <th class="date">Updated</th>
+</tr>
+
+<% @links.each do |link| %>
+
+<tr>
+  <td><%= link.id %></td>
+  <td><a href="<%= link.input_link %>"><%= link.input_link %></a></td>
+
+  <td><a href="/go/<%= link.output_code %>/"><%= link.output_code %></a></td>
+  <td class="dates"><%= link.created_at.strftime("%m-%d-%y") %></td>
+
+  <td class="dates"><%= link.updated_at.strftime("%m-%d-%y") %></td>
+  <td><a href="/links/<%= link.id %>/delete"><button class="delete">Delete</button></a></td>
+</tr>
+
+<% end %>
+
+</table>
