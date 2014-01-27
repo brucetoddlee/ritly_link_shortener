@@ -17,14 +17,6 @@ class LinksController < ApplicationController
     redirect_to link_path(link.id)
   end
 
-  # def create
-  # 	new_params = {}
-  #   new_params[:input_link] = params.require(:link).permit(:input_link).to_s
-  #   new_params[:output_code] = SecureRandom.urlsafe_base64(6)
-  #   link = Link.create(new_params)
-  #   redirect_to link_path(link.id)
-  # end
-
   def show
     id = params[:id]
     @link = Link.find(id)
